@@ -13,31 +13,6 @@ const input=document.querySelector(".inputcontainer")
 const mother=document.querySelector('.mother')
 const container=document.querySelector('.container')
 
-// generating random image for the background
-
-/*function changebg(){
-    const images=[
-        'url(./images/image3.jpg)',
-        'url(./images/image1.jpg)',
-        'url(./images/image2.jpg)',
-        'url(./images/image4.jpg)',
-        'url(./images/image5.jpg)',
-        'url(./images/image6.jpg)',
-        'url(./images/image7.jpg)',
-        'url(./images/image8.jpg)',
-        
-    ]
-    const bg=images[Math.floor(Math.random()*images.length)]
-    console.log(bg)
-    mother.style.background=' linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.3))',bg
-    
-    
-    
-    container.style.background=bg
-    
-
-}
-setInterval(changebg,6000)*/
 
 
 // creating the date
@@ -101,7 +76,9 @@ const searchDat = search.addEventListener("click", function () {
       windspeed.innerHTML = ` wind speed           <span class ="detailjs"> ${completeData.current.wind_kph}</span> Km/Hr`;
       cloud.innerHTML=`       Cloud cover          <span class ="detailjs"> ${completeData.current.cloud}</span> % `
       humid.innerHTML=`       humidity             <span class ="detailjs"> ${completeData.current.humidity}</span>`
-    });
+    }).catch((error)=>{
+  console.log(error)
+  })
     imageContainer.innerHTML=""
     input.innerHTML=''
 });
